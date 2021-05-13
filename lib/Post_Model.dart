@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 
 class Post {
   final int id;
-  final int userId;
+  final int user_id;
   final String title;
   final String body;
 
   Post({
     @required this.id,
-    @required this.userId,
+    @required this.user_id,
     @required this.title,
     @required this.body,
   });
@@ -24,14 +24,14 @@ class Post {
 
   factory Post.fromJson(Map<String, dynamic> json) => new Post(
         id: json["id"],
-        userId: json["userId"],
+        user_id: json["user_id"],
         title: json["title"],
         body: json["body"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "userId": userId,
+        "user_id": user_id,
         "title": title,
         "body": body,
       };
