@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   get: ^4.1.4
   http: ^0.13.3
+  pagination: ^0.1.0
 
 dev_dependencies:
   flutter_test:

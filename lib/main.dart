@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Post.dart';
+import 'User.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: PostsPage(),
+      home: UserPage(),
     );
   }
 }
