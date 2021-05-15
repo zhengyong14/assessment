@@ -7,18 +7,14 @@ class HttpService {
   final token =
       "958d8a9be060688d30bb7acce96ed76a796ba718edbf0969d15f75473c21407a";
 
-  Future<List<User>> getPosts() async {
+  Future<List<User>> getPosts(int page) async {
     //int number = 1;
 
-    final res = await http.get(Uri.parse(url), headers: {
+    final res = await http.get(Uri.parse('$url?page=$page'), headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',
     });
-
-    // final String postsURL = "https://jsonplaceholder.typicode.com/posts";
-    // final res = await http.get(Uri.parse(postsURL));
-    // print(res);
 
     if (res.statusCode == 200) {
       Map data = json.decode(res.body);

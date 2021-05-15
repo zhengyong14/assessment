@@ -3,8 +3,8 @@ import 'User_model.dart';
 import 'User_service.dart';
 import 'User.dart';
 
-enum Gender { Male, Female }
-enum Status { Active, Inactive }
+enum Gender { male, female }
+enum Status { active, inactive }
 
 class UserAdd extends StatefulWidget {
   @override
@@ -16,10 +16,10 @@ class _UserAddPageState extends State<UserAdd> {
   final _addFormKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   String gender = 'Male';
-  Gender _gender = Gender.Male;
+  Gender _gender = Gender.male;
   final _emailController = TextEditingController();
   String status = 'Active';
-  Status _status = Status.Active;
+  Status _status = Status.active;
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class _UserAddPageState extends State<UserAdd> {
                               ListTile(
                                 title: const Text('Male'),
                                 leading: Radio(
-                                  value: Gender.Male,
+                                  value: Gender.male,
                                   groupValue: _gender,
                                   onChanged: (Gender value) {
                                     setState(() {
@@ -106,7 +106,7 @@ class _UserAddPageState extends State<UserAdd> {
                               ListTile(
                                 title: const Text('Female'),
                                 leading: Radio(
-                                  value: Gender.Female,
+                                  value: Gender.female,
                                   groupValue: _gender,
                                   onChanged: (Gender value) {
                                     setState(() {
@@ -127,7 +127,7 @@ class _UserAddPageState extends State<UserAdd> {
                               ListTile(
                                 title: const Text('Active'),
                                 leading: Radio(
-                                  value: Status.Active,
+                                  value: Status.active,
                                   groupValue: _status,
                                   onChanged: (Status value) {
                                     setState(() {
@@ -140,7 +140,7 @@ class _UserAddPageState extends State<UserAdd> {
                               ListTile(
                                 title: const Text('Inactive'),
                                 leading: Radio(
-                                  value: Status.Inactive,
+                                  value: Status.inactive,
                                   groupValue: _status,
                                   onChanged: (Status value) {
                                     setState(() {
