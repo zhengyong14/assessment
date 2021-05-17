@@ -28,46 +28,7 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("User List"),
-        actions: <Widget>[
-          new IconButton(
-            icon: Icon(Icons.skip_previous),
-            onPressed: () {
-              setState(() {
-                page = 1;
-              });
-            },
-          ),
-          new IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              if (page == 1) {
-                return null;
-              }
-              setState(() {
-                page -= 1;
-              });
-            },
-          ),
-          new IconButton(
-            icon: Icon(Icons.arrow_forward),
-            onPressed: () {
-              if (page == pagenum) {
-                return null;
-              }
-              setState(() {
-                page += 1;
-              });
-            },
-          ),
-          new IconButton(
-            icon: Icon(Icons.skip_next),
-            onPressed: () async {
-              setState(() {
-                page = pagenum;
-              });
-            },
-          ),
-        ],
+        actions: <Widget>[],
       ),
       body: FutureBuilder(
         future: httpService.getPosts(page),
@@ -102,6 +63,53 @@ class _UserPageState extends State<UserPage> {
         ),
         child: const Icon(Icons.add),
         backgroundColor: Colors.blue[800],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.orangeAccent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new IconButton(
+              icon: Icon(Icons.skip_previous),
+              onPressed: () {
+                setState(() {
+                  page = 1;
+                });
+              },
+            ),
+            new IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                if (page == 1) {
+                  return null;
+                }
+                setState(() {
+                  page -= 1;
+                });
+              },
+            ),
+            new IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                if (page == pagenum) {
+                  return null;
+                }
+                setState(() {
+                  page += 1;
+                });
+              },
+            ),
+            new IconButton(
+              icon: Icon(Icons.skip_next),
+              onPressed: () async {
+                setState(() {
+                  page = pagenum;
+                });
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

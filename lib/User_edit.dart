@@ -30,17 +30,7 @@ class _UserEditPageState extends State<UserEdit> {
     _nameController.text = users.name;
     _emailController.text = users.email;
     status = users.status;
-    if (users.status == 'Active') {
-      _status = Status.Active;
-    } else {
-      _status = Status.Inactive;
-    }
     gender = users.gender;
-    if (users.gender == 'Male') {
-      _gender = Gender.Male;
-    } else {
-      _gender = Gender.Female;
-    }
     super.initState();
   }
 
@@ -48,7 +38,7 @@ class _UserEditPageState extends State<UserEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Post'),
+        title: Text('Edit User Information'),
       ),
       body: Form(
         key: _addFormKey,
@@ -200,7 +190,7 @@ class _UserEditPageState extends State<UserEdit> {
                                     );
                                   }
                                 },
-                                child: Text('Edit',
+                                child: Text('Save Changes',
                                     style: TextStyle(color: Colors.white)),
                                 style: ButtonStyle(
                                     backgroundColor:
